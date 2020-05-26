@@ -1,3 +1,5 @@
+React Js Higher order Componentt example created ref. to https://dev.to/gethackteam/from-higher-order-components-hoc-to-react-hooks-2bm9
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
