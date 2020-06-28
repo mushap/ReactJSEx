@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 dotenv.config();
 
-const dbUrl = `mongodb+srv://mushap:tester123@cluster0-sd1dd.azure.mongodb.net/Cluster0?retryWrites=true&w=majority`;
+const dbUrl = `mongodb://user:userpassword123@db-shard-00-00-xyozb.azure.mongodb.net:27017,db-shard-00-01-xyozb.azure.mongodb.net:27017,db-shard-00-02-xyozb.azure.mongodb.net:27017/DB?ssl=true&replicaSet=DB-shard-0&authSource=admin&retryWrites=true&w=majority
+`;
 
 const validate = data => {
   let errors = {};
@@ -38,7 +39,7 @@ mongodb.MongoClient.connect(dbUrl, (err, db) => {
       const { title, cover } = req.body;
       db.collection('movies').insert({ title, cover }, (err, result) => {
         if (err) {
-          res.status(500).json({ errors: { global: "Something went wrong" } });
+          res.json({ errors: { global: err } });
         } else {
           res.json({ movie: result.ops[0] });
         }

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Container, Image, List, Segment } from 'semantic-ui-react';
+import '../App.css';
 
 const Footer = props => {
     return (
-        <div>
+        <div className="footer">
             <Segment
                 inverted
                 style={{ margin: '5em 0em 0em', padding: '2em 0em' }}

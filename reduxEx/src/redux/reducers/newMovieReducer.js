@@ -1,4 +1,4 @@
-import { FETCHED_MOVIES, FETCHED_MOVIES_ERROR } from '../actions/moviesAction';
+import { NEW_MOVIE, NEW_MOVIE_ERROR } from '../actions/newMovieAction';
 
 const initialState = {
     movies: [],
@@ -7,15 +7,15 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case FETCHED_MOVIES:
+        case NEW_MOVIE:
             return {
                 ...state,
                 movies: action.payload
             }
-        case FETCHED_MOVIES_ERROR:
+        case NEW_MOVIE_ERROR:
             return {
                 ...state,
-                moviesError: action.payload
+                error: action.payload
             }
         default:
             return state;

@@ -41,6 +41,17 @@ div > .linker {
     margin-right: 20;
 }
 
+.footer {
+ position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.inlineError{
+    color: #f44336
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
