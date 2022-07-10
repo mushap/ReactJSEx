@@ -10,8 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 dotenv.config();
 
-const dbUrl = `mongodb://user:userpassword123@db-shard-00-00-xyozb.azure.mongodb.net:27017,db-shard-00-01-xyozb.azure.mongodb.net:27017,db-shard-00-02-xyozb.azure.mongodb.net:27017/DB?ssl=true&replicaSet=DB-shard-0&authSource=admin&retryWrites=true&w=majority
-`;
+const dbUrl = process.env.MONGODB_URI;
 
 const validate = data => {
   let errors = {};
